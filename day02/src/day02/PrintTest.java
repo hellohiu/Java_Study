@@ -38,7 +38,7 @@ public class PrintTest {
 
         System.out.printf("나의 학점은 %c 입니다.\n", 'A');
         // 출력 > 나의 학점은 A 입니다.
-        
+
         System.out.printf("%-5s\t\t%5d원\n", str1, price1);
         // 출력 > 메로나  		 2000원
         System.out.printf("%-5s\t\t%5d원\n", str2, price2);
