@@ -55,7 +55,7 @@ class Creature {
     }
 
     // 상태보기
-    void printStatus(){
+    void printState(){
         System.out.println(this.turn + "일차");
         System.out.println("이름 : " + this.name);
         System.out.println("HP : " + this.hp);
@@ -71,7 +71,7 @@ public class Game {
         String charMsg = "1.피카츄\n2.두더지\n3.긴팔원숭이\n4.돌아가기\n입력 >> ";
         String gameMsg = "1.먹기\n2.자기\n3.청소하기\n4.상태확인\n입력 >> ";
         boolean isRun = true;
-        int choice = 0;
+        int choice = 0, gameChoice = 0;
         Scanner sc = new Scanner(System.in);
 
         System.out.println(title);
@@ -88,7 +88,44 @@ public class Game {
                     new Creature("피카츄", 3),
                     new Creature("두더지", 2),
                     new Creature("긴팔원숭이", 4)
-            };
+                };
+
+            while(true){
+                System.out.println(gameMsg);
+                gameChoice = sc.nextInt();
+                Creature myChar = creature[choice-1];
+                // 1.먹기 2.자기 3.청소하기 4.상태확인
+                switch(gameChoice){
+                case 1 :
+                    myChar.eat();
+                    System.out.println("냠냠...");
+                    break;
+                case 2 :
+                    myChar.sleep();
+                    break;
+                case 3 :
+                    myChar.cleanUp();
+                    break;
+                case 4 :
+                    myChar.printState();
+                    break;
+                default :
+                    System.out.println("잘못 입력하셨습니다.");
+                }
+
+                if(myChar.eatCnt >= 3){ myChar.poop(); }
+                if(myChar.poo){
+                    System.out.println("변을 치워야 합니다.");
+                    myChar.hp--;
+                }
+                if(myChar.turn >= 10){
+                    System.out.println("☆★☆★☆★☆★☆★☆★");
+                    myChar.printState();
+                    System.out.println("☆★☆★☆★☆★☆★☆★");
+                    System.out.println(myChar.hp >= 5 ? "해피엔딩" : "게임오버");
+                    break;
+                }
+            }
         }
     }
 }
