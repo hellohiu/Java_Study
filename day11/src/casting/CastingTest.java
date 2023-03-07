@@ -29,9 +29,14 @@ public class CastingTest {
 
         // 3번
         Tv tv = new SmartTv();
-
 //      부모클래스 타입의 참조변수로 자식클래스 타입의 객체를 참조한다. (가리키게 한다.)
 //      부모클래스 타입의 참조변수에 자식클래스 타입의 객체의 주소값을 저장한다.
+
+        tv.ch = 3;
+        tv.power = true;
+        tv.vol = 10;
+        tv.chDown();
+//      tv.netflix();  -->  오류가 난다!?
 
         // Down Casting (업캐스팅 된 것만 가능하다!)
         SmartTv smartTv2 = (SmartTv)tv;
