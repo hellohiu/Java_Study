@@ -12,7 +12,18 @@ public class Main {
         fi.method();
 
         // 람다식
-        FunctionalInter fi2 = () -> System.out.println("람다식");
-        fi2.method();
+        FunctionalInter fii = () -> System.out.println("람다식");
+        fii.method();
+
+        // 람다식
+        FunctionalInter2 fi2 = number -> number + 10;
+        System.out.println(fi2.add10(10));
+
+        FunctionalInter3 fi3 = (num1, num2) -> {
+            System.out.println(num1 + "+" + num2 + "=" + (num1+num2));
+            return num1 + num2;
+        };
+        int result = fi3.method(3,8);
+        System.out.println(result);
     }
 }
