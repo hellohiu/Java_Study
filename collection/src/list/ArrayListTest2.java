@@ -40,5 +40,19 @@ public class ArrayListTest2 {
         // 포함 여부 검사 (리스트에 존재하면 true, 없으면 false) : contains(값)
         System.out.println(list.contains(80));
         System.out.println(list.contains(70));
+
+        // 값으로 index 가져오기 (해당 값의 index 번호 반환 -> 없는 값은 -1 반환) : indexOf(값)
+        System.out.println(list.indexOf(70));
+
+        // 수정할 인덱스와 값을 넘겨줘서 수정한다. : set(인덱스, 값)
+        // 수정되기 전의 값을 반환한다.
+        System.out.println(list.set(2,100));
+        System.out.println(list);
+
+        try{
+            list.set(80,100);
+        } catch(IndexOutOfBoundsException e){
+            System.out.println("인덱스 범위 확인!!");
+        }
     }
 }
