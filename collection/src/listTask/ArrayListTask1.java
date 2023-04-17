@@ -23,9 +23,7 @@ public class ArrayListTask1 {
                 i--;
             }
         }
-
         Collections.sort(list);
-
         System.out.println(list);
     }
 }
