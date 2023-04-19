@@ -37,6 +37,7 @@ public class HashMapTask {
 
         System.out.print(msg);
         int choice = sc.nextInt();
+
         switch (choice){
             case 1 :
                 result = "아메리카노는 " + menu.get("아메리카노") + "원 입니다.";
