@@ -19,6 +19,7 @@ public class Lotto {
             while(lottoNum.size() < 7) {
                 lottoNum.add(r.nextInt(45) + 1);
             }
+
             result = new ArrayList<>(lottoNum);
             Collections.sort(result);
             lottoNum.clear();
